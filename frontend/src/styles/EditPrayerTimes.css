@@ -1,0 +1,42 @@
+#prayerTimesTable2 {
+  
+    top: 40%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse; /* Ensures borders are not doubled */
+    background-color: transparent; 
+    color: white;
+    padding: 10px; /* Padding around the table */
+    border: 10px solid #c8a97e; /* Border similar to the image */
+    border-radius: 15px; /* Rounded corners */
+  }
+  
+  /* Center-align text in table headers and cells */
+  #prayerTimesTable2 th,
+  #prayerTimesTable2 td {
+    text-align: center;
+    padding: 10px; /* Adds padding for better spacing */
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 20px;
+    border: 1px solid #c8a97e;
+  }
+  
+  #prayerTimesTable2 th, #prayerName{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Times New Roman";
+  }
+  
+  /* Ensure all columns are equal width */
+  #prayerTimesTable th,
+  #prayerTimesTable td {
+    width: calc(100% / 3);
+  }
+  
+  /* Set equal row height */
+  #prayerTimesTable tr {
+    height: 50px; /* Adjust as needed */
+  }
+  

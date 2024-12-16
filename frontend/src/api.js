@@ -3,7 +3,7 @@ const year = today.getFullYear();
 const month = today.getMonth()+1;
 const date = today.getDate();
 const full_date= year + "-" + month + "-" + date;
-const API_URL= `http://99.239.66.38:3001/prayerTimes/${full_date}`;
+const API_URL= `http://localhost:3001/prayerTimes/${full_date}`;
 
 export const fetchPrayerTimes = async () => {
     try {

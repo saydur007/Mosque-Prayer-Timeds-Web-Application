@@ -20,7 +20,7 @@ let formattedDate = null;
     console.log(formattedDate);
 
     try {
-      const response = await fetch(`http://99.239.66.38:3001/prayerTimes/${formattedDate}`);
+      const response = await fetch(`http://localhost:3001/prayerTimes/${formattedDate}`);
       const data = await response.json();
       if (!data) break;
 

@@ -12,7 +12,7 @@ app.use(express.json());
 const db = require("./models");
 
 const today = new Date();
-const year = today.getFullYear() + 1;
+const year = today.getFullYear() ;
 const API_URL= `https://api.aladhan.com/v1/calendarByCity/${year}?city=Toronto&country=Canada&method=15`;
 const timecalc = require('./calculation');
 
