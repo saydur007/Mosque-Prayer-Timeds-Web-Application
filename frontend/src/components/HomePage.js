@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
 import '../styles/HomePage.css';
 import dclogo from './dc.png';
 import usePrayerTimes from '../functions/usePrayerTimes';
