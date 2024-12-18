@@ -73,13 +73,9 @@ const InsertYear = async (year) => {
             console.log('Data successfully inserted into the database');
           }
         } catch (error) {
-          if (error.response && error.response.status === 404) {
-            // Insert a new record if not found
-            await axios.post('http://tests-env-1.eba-dudpkeyx.us-east-1.elasticbeanstalk.com/prayerTimes', timingswithDate);
-            console.log('Data successfully inserted into the database');
-          } else {
+        
             console.error('Error inserting prayer time:', error.response ? error.response.data : error);
-          }
+         
         }
       }
     }

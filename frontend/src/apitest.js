@@ -20,7 +20,7 @@ let formattedDate = null;
     console.log(formattedDate);
 
     try {
-      const response = await fetch(`http://localhost:3001/prayerTimes/${formattedDate}`);
+      const response = await fetch(`http://tests-env-1.eba-dudpkeyx.us-east-1.elasticbeanstalk.com/prayerTimes/${formattedDate}`);
       const data = await response.json();
       if (!data) break;
 
