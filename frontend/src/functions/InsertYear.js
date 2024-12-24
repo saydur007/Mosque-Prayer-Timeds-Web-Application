@@ -66,10 +66,10 @@ const InsertYear = async (year) => {
         const timingswithDate = { date, weekday, FajrStart, Fajr, ZuhrStart, Zuhr, AsrStart, Asr, Maghrib, IshaStart, Isha };
 
         try {
-          const existingTiming = await axios.get(`http://tests-env-1.eba-dudpkeyx.us-east-1.elasticbeanstalk.com/prayerTimes/${date}`);
+          const existingTiming = await axios.get(`https://dawahcentre.click/prayerTimes/${date}`);
           if (!existingTiming.data) {
             // Insert a new record
-            await axios.post('http://tests-env-1.eba-dudpkeyx.us-east-1.elasticbeanstalk.com/prayerTimes', timingswithDate);
+            await axios.post('https://dawahcentre.click/prayerTimes', timingswithDate);
             console.log('Data successfully inserted into the database');
           }
         } catch (error) {
