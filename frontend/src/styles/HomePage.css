@@ -4,36 +4,35 @@
   color: red !important;
 }
 
-.blink {
-  color: yellow;
-  animation: blink 1s linear infinite;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.red {
-  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Famazing-blue-pattern-background-free--266697609171970717%2F&psig=AOvVaw0eKExmetJ2Ksm0WnBMcZzY&ust=1718488061475000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLjEwYWJ3IYDFQAAAAAdAAAAABAE');
-}
-
-.table {
+  .blink {
+    color: yellow;
+    animation: blink 1s linear infinite;
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .red {
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Famazing-blue-pattern-background-free--266697609171970717%2F&psig=AOvVaw0eKExmetJ2Ksm0WnBMcZzY&ust=1718488061475000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLjEwYWJ3IYDFQAAAAAdAAAAABAE');
+  }
+.table{
   background-color: transparent !important; 
   color: red !important;
 }
-
-.table-bordered {
-  background-color: transparent !important;
-  color: red !important; 
-}
-
-.image {
+  .table-bordered {
+    background-color: transparent !important;
+    color: red !important; 
+  }
+.image{
   background-color: transparent;
 }
+  /* Ensure the table occupies the entire width of the page */
 
 #prayerTimesTable {
+  
   top: 40%;
   width: 90%;
   margin-left: auto;
@@ -57,7 +56,7 @@
   border: 1px solid #c8a97e;
 }
 
-#prayerTimesTable th, #prayerName {
+#prayerTimesTable th, #prayerName{
   font-weight: bold;
   font-size: 50px;
   font-family: "Times New Roman";
@@ -75,6 +74,7 @@
 }
 
 /* Add borders to table, headers, and cells */
+
 
 @keyframes blink {
   50% {
@@ -96,85 +96,11 @@
   color: yellow;
   margin-top: 10px;
 }
-
 .blinktext {
   animation: blinker 2s step-start 0s infinite;
 }
-
 @keyframes blinker {
   50% {
     opacity: 0;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  #prayerTimesTable th,
-  #prayerTimesTable td {
-    font-size: 40px;
-  }
-
-  .message {
-    font-size: 50px;
-  }
-}
-
-@media (max-width: 992px) {
-  #prayerTimesTable th,
-  #prayerTimesTable td {
-    font-size: 30px;
-  }
-
-  .message {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  #prayerTimesTable th,
-  #prayerTimesTable td {
-    font-size: 20px;
-  }
-
-  .message {
-    font-size: 30px;
-  }
-
-  #prayerTimesTable th,
-  #prayerTimesTable td {
-    display: block;
-    width: 100%;
-  }
-
-  #prayerTimesTable tr {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  #prayerTimesTable td {
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
-  }
-
-  #prayerTimesTable td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 50%;
-    padding-left: 15px;
-    font-weight: bold;
-    text-align: left;
-  }
-}
-
-@media (max-width: 576px) {
-  #prayerTimesTable th,
-  #prayerTimesTable td {
-    font-size: 15px;
-  }
-
-  .message {
-    font-size: 20px;
   }
 }
