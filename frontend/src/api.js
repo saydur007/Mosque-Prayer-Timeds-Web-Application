@@ -3,7 +3,7 @@ const year = today.getFullYear();
 const month = today.getMonth()+1;
 const date = today.getDate();
 const full_date= year + "-" + month + "-" + date;
-const API_URL= `http://tests-env-1.eba-dudpkeyx.us-east-1.elasticbeanstalk.com/prayerTimes/${full_date}`;
+const API_URL= `https://dawahcentre.click/prayerTimes/${full_date}`;
 
 export const fetchPrayerTimes = async () => {
     try {

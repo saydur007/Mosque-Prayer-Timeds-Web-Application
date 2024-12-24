@@ -13,7 +13,7 @@ function EditPrayerTimes() {
   useEffect(() => {
     const fetchPrayerTimes = async () => {
       try {
-        const response = await axios.get('http://tests-env-1.eba-dudpkeyx.us-east-1.elasticbeanstalk.com/prayerTimes');
+        const response = await axios.get('https://dawahcentre.click/prayerTimes');
         setPrayerTimes(response.data);
         setFilteredPrayerTimes(response.data);
       } catch (error) {

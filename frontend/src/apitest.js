@@ -12,6 +12,7 @@ export const fetchPrayerTimess = async () => {
   let changedTime = null;
 let formattedDate = null;
   const formatDate = (date) => {
+
     return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
   };
 
@@ -20,7 +21,7 @@ let formattedDate = null;
     console.log(formattedDate);
 
     try {
-      const response = await fetch(`http://tests-env-1.eba-dudpkeyx.us-east-1.elasticbeanstalk.com/prayerTimes/${formattedDate}`);
+      const response = await fetch(`https://dawahcentre.click/prayerTimes/${formattedDate}`);
       const data = await response.json();
       if (!data) break;
 
