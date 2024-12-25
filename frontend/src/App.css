@@ -54,7 +54,7 @@ body {
   
   -moz-animation: my-animation 10s linear infinite;
   -webkit-animation: my-animation 10s linear infinite;
-  animation: my-animation 60s linear infinite;
+  animation: my-animation 50s linear infinite;
 }
 
 /* for Firefox */

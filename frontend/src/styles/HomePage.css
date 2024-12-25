@@ -88,17 +88,23 @@
 
 /* Darken effect */
 .darken {
-  background-color: black !important;
+  
+  animation: darken 1s step-start 0s infinite;
+}
+@keyframes darken {
+  50% {
+    background-color: rgb(244, 107, 107);
+  }
 }
 
 .message {
   font-size: 60px;
-  color: yellow;
+  color: rgb(229, 234, 233);
   margin-top: 10px;
 }
-.blinktext {
-  animation: blinker 2s step-start 0s infinite;
-}
+/* .blinktext {
+  animation: blinker 4s step-start 0s infinite;
+} */
 @keyframes blinker {
   50% {
     opacity: 0;
