@@ -29,6 +29,34 @@ export const convertFormat = (hours, minutes) => {
     } else {
       min2 = min2 + 45;
     }
+    if(min >= 30)
+      {
+          min = min -30;
+          hour +=1;
+          min2 = min2 -15;
+          hour2 +=1;
+      }
+      else{
+          min = min + 30;
+      
+      }
+  var reminder = min  % 15;
+  console.log(reminder);
+  if (reminder == 0)
+      {
+          return this.convertFormat(hour, min); 
+      }
+  else{
+      min = min + (15 - reminder);
+      if(min == 60)
+          {
+              min = 0;
+              hour +=1;
+          }
+          return this.convertFormat(hour, min); 
+          
+  }
+ 
     calculatetime = convertFormat(hour2, min2);
     return calculatetime;
   };

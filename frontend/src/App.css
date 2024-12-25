@@ -46,13 +46,15 @@ body {
 
 #scroll-text {
   /* animation properties */
+  display: inline-block; /* Ensure the text is treated as a single line */
+  white-space: nowrap; 
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
   
-  -moz-animation: my-animation 3s linear infinite;
-  -webkit-animation: my-animation 3s linear infinite;
-  animation: my-animation 25s linear infinite;
+  -moz-animation: my-animation 5s linear infinite;
+  -webkit-animation: my-animation 5s linear infinite;
+  animation: my-animation 30s linear infinite;
 }
 
 /* for Firefox */
