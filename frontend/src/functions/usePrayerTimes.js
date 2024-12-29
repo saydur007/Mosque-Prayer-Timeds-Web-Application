@@ -81,9 +81,10 @@ console.log(timeString);
             [prayer]: countdownString,
           }));
         } else if (currentSeconds >= prayerSeconds - 900) {
+          if (prayer !== "Maghrib") {
           setBlink(prayer, true);
           setDarken(prayer, false);
-          setMessage("Time for Adhan");
+          setMessage("Time for Adhan");}
         } else {
           setBlink(prayer, false);
           setDarken(prayer, false);

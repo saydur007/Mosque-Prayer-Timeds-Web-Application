@@ -15,7 +15,7 @@ function HomePage({ prayerTimes, changedprayer }) {
     darkenIsha,
     message,
     countdown} = usePrayerTimes(prayerTimes);
-    console.log(blinkAsr);
+    
  const [showJummah, setShowJummah] = useState(true);
 
   useEffect(() => {
