@@ -10,9 +10,8 @@ const convertTo24Hour = (time) => {
     hours = '00';
   }
 
-  if (modifier === 'PM') {
-    hours = parseInt(hours, 10) + 12;
-  }
+  hours = parseInt(hours, 10) + 12;
+  
 
   return `${hours}:${minutes}`;
 };
@@ -47,6 +46,7 @@ const usePrayerTimes = (prayerTimes) => {
 
       Object.keys(prayerTimess).forEach(prayer => {
         let timeString = prayerTimess[prayer];
+        console.log(prayer);
         if (prayer !== "Fajr") {
           timeString = convertTo24Hour(timeString);
         }
