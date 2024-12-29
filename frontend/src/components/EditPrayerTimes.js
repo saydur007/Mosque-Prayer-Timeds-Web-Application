@@ -55,7 +55,7 @@ function EditPrayerTimes() {
     const updatedPrayerTime = filteredPrayerTimes.find(pt => pt.id === id);
     console.log('Updating prayer time:', updatedPrayerTime);
     try {
-      const response = await axios.put(`http://tests-env-1.eba-dudpkeyx.us-east-1.elasticbeanstalk.com/prayerTimes/${updatedPrayerTime.date}`, updatedPrayerTime);
+      const response = await axios.put(`https://dawahcentre.click/prayerTimes/${updatedPrayerTime.date}`, updatedPrayerTime);
       setMessage('Prayer time updated successfully.');
       console.log('Prayer time updated:', response.data);
     } catch (error) {
