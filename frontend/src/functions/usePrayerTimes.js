@@ -1,17 +1,22 @@
 import { useState, useEffect } from 'react';
 
-
 const convertTo24Hour = (time) => {
-  let [hours, minutes] = time.split(':');
+  if (!time) return ''; // Return an empty string if time is undefined
+
+  const [timePart, modifier] = time.split(' ');
+  let [hours, minutes] = timePart.split(':');
 
   if (hours === '12') {
     hours = '00';
   }
+
+  if (modifier === 'PM') {
     hours = parseInt(hours, 10) + 12;
-  
+  }
 
   return `${hours}:${minutes}`;
 };
+
 const usePrayerTimes = (prayerTimes) => {
   const prayerTimess = {
     Fajr: prayerTimes.Fajr,
@@ -20,6 +25,7 @@ const usePrayerTimes = (prayerTimes) => {
     Maghrib: prayerTimes.Maghrib, // Replace with actual time if available
     Isha: prayerTimes.Isha,
   };
+
   const [blinkFajr, setBlinkFajr] = useState(false);
   const [darkenFajr, setDarkenFajr] = useState(false);
   const [blinkZuhr, setBlinkZuhr] = useState(false);
@@ -40,15 +46,13 @@ const usePrayerTimes = (prayerTimes) => {
       const currentSeconds = currentMinutes * 60 + currentTime.getSeconds();
 
       Object.keys(prayerTimess).forEach(prayer => {
-       
-        var timeString = "";
-        if (prayer !== "Fajr"){
-         timeString = convertTo24Hour(prayerTimess[prayer]);
+        let timeString = prayerTimess[prayer];
+        if (prayer !== "Fajr") {
+          timeString = convertTo24Hour(timeString);
         }
-        else{
-           timeString = prayerTimess[prayer];
-        }
-        
+
+        if (!timeString) return; // Skip if timeString is empty or undefined
+console.log(timeString);
         const [hours, minutes] = timeString.split(":").map(Number);
         const prayerMinutes = hours * 60 + minutes;
         const prayerSeconds = prayerMinutes * 60;
@@ -92,7 +96,7 @@ const usePrayerTimes = (prayerTimes) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [prayerTimess]);
 
   const setBlink = (prayer, value) => {
     switch (prayer) {
