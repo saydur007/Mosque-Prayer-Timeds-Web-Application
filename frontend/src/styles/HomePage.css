@@ -29,6 +29,11 @@
 .image{
   background-color: transparent;
 }
+
+.image img {
+  width: 180px;
+  height: 180px;
+}
   /* Ensure the table occupies the entire width of the page */
 
 #prayerTimesTable {
