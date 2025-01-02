@@ -24,7 +24,6 @@ const usePrayerTimes = (prayerTimes) => {
     Maghrib: prayerTimes.Maghrib, // Replace with actual time if available
     Isha: prayerTimes.Isha,
   };
-
   const [blinkFajr, setBlinkFajr] = useState(false);
   const [darkenFajr, setDarkenFajr] = useState(false);
   const [blinkZuhr, setBlinkZuhr] = useState(false);
@@ -52,7 +51,7 @@ const usePrayerTimes = (prayerTimes) => {
         }
 
         if (!timeString) return; // Skip if timeString is empty or undefined
-console.log(timeString);
+
         const [hours, minutes] = timeString.split(":").map(Number);
         const prayerMinutes = hours * 60 + minutes;
         const prayerSeconds = prayerMinutes * 60;
@@ -62,10 +61,14 @@ console.log(timeString);
           setDarken(prayer, false);
           setMessage("");
         } else if (currentSeconds >= prayerSeconds) {
+          if(prayer =="Zuhr" && prayerTimes.weekday == "Friday"){
+          return;}
           setBlink(prayer, true);
           setDarken(prayer, true);
           setMessage("It is Time for Salah");
         } else if (currentSeconds >= prayerSeconds - 600) {
+          if(prayer =="Zuhr" && prayerTimes.weekday == "Friday"){
+            return;}
           setBlink(prayer, false);
           setDarken(prayer, false);
 
@@ -81,6 +84,8 @@ console.log(timeString);
             [prayer]: countdownString,
           }));
         } else if (currentSeconds >= prayerSeconds - 900) {
+          if(prayer =="Zuhr" && prayerTimes.weekday == "Friday"){
+            return;}
           if (prayer !== "Maghrib") {
           setBlink(prayer, true);
           setDarken(prayer, false);
