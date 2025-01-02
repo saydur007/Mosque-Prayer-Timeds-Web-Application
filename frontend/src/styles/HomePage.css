@@ -26,8 +26,19 @@
     background-color: transparent !important;
     color: red !important; 
   }
+  .container {
+    display: flex;
+    justify-content: space-between; /* This will push the clock to the right */
+    align-items: center; /* This will vertically center the image and clock */
+    width: 100%;    
+  }
 .image{
   background-color: transparent;
+  flex-grow: 1;                /* Allow the image to take up available space */
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .image img {
@@ -114,4 +125,9 @@
   50% {
     opacity: 0;
   }
+}
+.clock{
+  margin-left: 650px;           /* Push the clock to the far right */
+  font-size: 80px;
+ 
 }

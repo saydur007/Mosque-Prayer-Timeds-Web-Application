@@ -3,6 +3,7 @@ import '../styles/HomePage.css';
 import dclogo from './dc.png';
 import usePrayerTimes from '../functions/usePrayerTimes';
 function HomePage({ prayerTimes, changedprayer }) {
+
   const { blinkFajr,
     darkenFajr,
     blinkZuhr,
@@ -17,7 +18,14 @@ function HomePage({ prayerTimes, changedprayer }) {
     countdown} = usePrayerTimes(prayerTimes);
     
  const [showJummah, setShowJummah] = useState(true);
+ let time  = new Date().toLocaleTimeString()
 
+ const [ctime,setTime] = useState(time)
+ const UpdateTime=()=>{
+   time =  new Date().toLocaleTimeString()
+   setTime(time)
+ }
+ setInterval(UpdateTime)
   useEffect(() => {
     const interval = setInterval(() => {
       setShowJummah(prevShowJummah => !prevShowJummah);
@@ -25,11 +33,15 @@ function HomePage({ prayerTimes, changedprayer }) {
 
     return () => clearInterval(interval);
   }, []);
+
   return (
     <div className={`home-page`}>
-      <div>
+   
+      <div className="container">
       <div class="image">
         <img src={dclogo}></img>
+        <div className="clock">
+        {ctime} </div>
       </div>
       </div>
       {message && <p className="message blinktext">{message}</p>}
