@@ -49,7 +49,7 @@ function HomePage({ prayerTimes, changedprayer }) {
     <thead>
       <tr>
         <th>Prayers</th>
-        <th>Current Times</th>
+        <th>Jama'ah Times</th>
         <th>From {new Date(changedprayer.date).toLocaleString('default', { month: 'long' })} {new Date(changedprayer.date).getDate() + 1}</th> 
       </tr>
     </thead>
@@ -62,7 +62,7 @@ function HomePage({ prayerTimes, changedprayer }) {
       </tr>
 
       <tr>
-      <td id = "prayerName">Zuhr</td>
+      <td id = "prayerName">Dhuhr</td>
         <td className={`${blinkZuhr ? 'blink' : ''} ${darkenZuhr ? 'darken' : ''}`}>{prayerTimes.Zuhr} pm</td>
         <td>{changedprayer.Zuhr} pm </td>
       </tr>
@@ -139,7 +139,6 @@ function HomePage({ prayerTimes, changedprayer }) {
       )} */}
  
     </div>
-
   );
 }
 
