@@ -49,13 +49,14 @@ const usePrayerTimes = (prayerTimes) => {
         if (prayer !== "Fajr") {
           timeString = convertTo24Hour(timeString);
         }
-
+console.log(timeString);
         if (!timeString) return; // Skip if timeString is empty or undefined
 
         const [hours, minutes] = timeString.split(":").map(Number);
         const prayerMinutes = hours * 60 + minutes;
         const prayerSeconds = prayerMinutes * 60;
-
+console.log(prayerSeconds);
+console.log(currentSeconds);
         if (currentSeconds >= prayerSeconds + 120) {
           setBlink(prayer, false);
           setDarken(prayer, false);

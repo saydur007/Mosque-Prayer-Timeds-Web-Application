@@ -16,7 +16,7 @@ function HomePage({ prayerTimes, changedprayer }) {
     darkenIsha,
     message,
     countdown} = usePrayerTimes(prayerTimes);
-    
+ 
  const [showJummah, setShowJummah] = useState(true);
  let time  = new Date().toLocaleTimeString()
 
@@ -50,7 +50,7 @@ function HomePage({ prayerTimes, changedprayer }) {
       <tr>
         <th>Prayers</th>
         <th>Jama'ah Times</th>
-        <th>From {new Date(changedprayer.date).toLocaleString('default', { month: 'long' })} {new Date(changedprayer.date).getDate() + 1}</th> 
+        <th>From {new Date(changedprayer.date+"T00:00:00-05:00").toLocaleString('default', { month: 'long' })} {new Date(changedprayer.date+"T00:00:00-05:00").getDate() }</th> 
       </tr>
     </thead>
     <tbody>
