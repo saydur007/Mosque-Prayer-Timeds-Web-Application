@@ -20,12 +20,12 @@ function HomePage({ prayerTimes, changedprayer }) {
  const [showJummah, setShowJummah] = useState(true);
  let time  = new Date().toLocaleTimeString()
 
- const [ctime,setTime] = useState(time)
- const UpdateTime=()=>{
-   time =  new Date().toLocaleTimeString()
-   setTime(time)
- }
- setInterval(UpdateTime)
+//  const [ctime,setTime] = useState(time)
+//  const UpdateTime=()=>{
+//    time =  new Date().toLocaleTimeString()
+//    setTime(time)
+//  }
+ //setInterval(UpdateTime)
   useEffect(() => {
     const interval = setInterval(() => {
       setShowJummah(prevShowJummah => !prevShowJummah);
@@ -40,8 +40,8 @@ function HomePage({ prayerTimes, changedprayer }) {
       <div className="container">
       <div class="image">
         <img src={dclogo}></img>
-        <div className="clock">
-        {ctime} </div>
+        {/* <div className="clock">
+        {ctime} </div> */}
       </div>
       </div>
       {message && <p className="message blinktext">{message}</p>}
@@ -89,7 +89,7 @@ function HomePage({ prayerTimes, changedprayer }) {
   <table id="prayerTimesTable">
           <thead>
             <tr>
-              <th>Jummah Prayers</th>
+              <th>Jumu'ah Prayers</th>
               <th>1st Prayer</th>
               <th>2nd Prayer</th>
             </tr>
